@@ -1,3 +1,5 @@
+import React, { useEffect, useState } from "react";
+
 import styles from "./ItemDetail.module.css";
 
 import { RingBadge } from "@/components/Badge/Badge";
@@ -19,6 +21,12 @@ interface ItemProps {
 
 export function ItemDetail({ item }: ItemProps) {
   const notMaintainedText = getLabel("notUpdated");
+  const [fade, setFade] = useState(false);
+  useEffect(() => {
+    setFade(false);
+    const timeout = setTimeout(() => setFade(true), 10);
+    return () => clearTimeout(timeout);
+  }, [item.id]);
   return (
     <>
       <div className={styles.header}>
@@ -31,7 +39,9 @@ export function ItemDetail({ item }: ItemProps) {
             <span className={styles.release}>
               <Attention className={styles.notMaintainedIcon} />
             </span>
-            <div className={styles.content}>{notMaintainedText}</div>
+            <div className={cn(styles.content, fade && styles["fade-in"])}>
+              {notMaintainedText}
+            </div>
           </div>
         )}
         <Revision
@@ -39,9 +49,10 @@ export function ItemDetail({ item }: ItemProps) {
           release={item.release}
           ring={item.ring}
           body={item.body}
+          fade={fade}
         />
         {item.revisions?.map((revision, index) => (
-          <Revision key={index} id={item.id} {...revision} />
+          <Revision key={index} id={item.id} {...revision} fade={fade} />
         ))}
       </div>
     </>
@@ -53,9 +64,10 @@ interface RevisionProps {
   release: string;
   ring: string;
   body?: string;
+  fade?: boolean;
 }
 
-function Revision({ id, release, ring, body }: RevisionProps) {
+function Revision({ id, release, ring, body, fade }: RevisionProps) {
   const date = new Date(release);
   const editLink = getEditUrl({ id, release });
   const formattedDate = date.toLocaleDateString("en-US", {
@@ -67,7 +79,7 @@ function Revision({ id, release, ring, body }: RevisionProps) {
       <time dateTime={release} className={styles.release}>
         {formattedDate}
       </time>
-      <div className={styles.content}>
+      <div className={cn(styles.content, fade && styles["fade-in"])}>
         <RingBadge className={styles.ring} ring={ring} size="large" />
         {body ? <div dangerouslySetInnerHTML={{ __html: body }} /> : null}
         {editLink && (

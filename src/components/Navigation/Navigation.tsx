@@ -4,6 +4,7 @@ import styles from "./Navigation.module.css";
 
 import IconOverview from "@/components/Icons/Overview";
 import IconQuestion from "@/components/Icons/Question";
+import IconRadar from "@/components/Icons/Radar";
 import IconSearch from "@/components/Icons/Search";
 import { getLabel, getToggle } from "@/lib/data";
 
@@ -15,6 +16,12 @@ export function Navigation() {
           <Link href="/help-and-about-tech-radar">
             <IconQuestion className={styles.icon} />
             <span className={styles.label}>{getLabel("pageAbout")}</span>
+          </Link>
+        </li>
+        <li className={styles.item}>
+          <Link href="/radar">
+            <IconRadar className={styles.icon} />
+            <span className={styles.label}>{getLabel("radar")}</span>
           </Link>
         </li>
         <li className={styles.item}>

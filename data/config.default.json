@@ -13,72 +13,72 @@
   },
   "sections": ["radar", "tags", "list"],
   "colors": {
-    "foreground": "#fcf2e6",
-    "background": "#113521",
-    "highlight": "#d4a373",
+    "foreground": "#222",
+    "background": "#fff",
+    "highlight": "#0066AE",
     "content": "#fff",
-    "text": "#575757",
-    "link": "#bc6c25",
-    "border": "rgba(255, 255, 255, 0.1)",
-    "tag": "rgba(255, 255, 255, 0.1)"
+    "text": "#222",
+    "link": "#1976d2",
+    "border": "rgba(0,0,0,0.1)",
+    "tag": "rgba(0,0,0,0.05)"
   },
   "quadrants": [
     {
       "id": "languages-and-frameworks",
       "title": "Languages & Frameworks",
       "description": "A selection of programming languages, alongside essential frameworks for building a variety of custom software.",
-      "color": "#a3b18a"
+      "color": "rgba(0,0,0,0)"
     },
     {
       "id": "methods-and-patterns",
       "title": "Methods & Patterns",
       "description": "Key software development methods and design patterns, covering everything from continuous integration and testing to architecture.",
-      "color": "#588157"
+      "color": "rgba(0,0,0,0)"
     },
     {
       "id": "platforms-and-operations",
       "title": "Platforms & Operations",
       "description": "Technologies and tools for software and infrastructure operations, including platforms and services for managing and scaling applications.",
-      "color": "#3f633e"
+      "color": "rgba(0,0,0,0)"
     },
     {
       "id": "tools",
       "title": "Tools",
       "description": "A range of software tools, from simple productivity enhancers to comprehensive project solutions, catering to various project needs.",
-      "color": "#40713f"
+      "color": "rgba(0,0,0,0)"
     }
   ],
   "rings": [
     {
       "id": "adopt",
-      "title": "Adopt",
+      "title": "Standard",
       "description": "",
-      "color": "#588157",
+      "color": "#5cb449",
+      "radius": 0.25,
+      "strokeWidth": 7
+    },
+    {
+      "id": "trial",
+      "title": "Recommended",
+      "description": "",
+      "color": "#029df7",
       "radius": 0.5,
       "strokeWidth": 5
     },
     {
-      "id": "trial",
-      "title": "Trial",
-      "description": "",
-      "color": "#457b9d",
-      "radius": 0.69,
-      "strokeWidth": 3
-    },
-    {
       "id": "assess",
-      "title": "Assess",
+      "title": "Assessed",
       "description": "",
-      "color": "#bc6c25",
-      "radius": 0.85,
-      "strokeWidth": 2
+      "color": "#faa03d",
+      "radius": 0.75,
+      "strokeWidth": 3
     },
     {
       "id": "hold",
       "title": "Hold",
       "description": "",
-      "color": "#d62828",
-      "radius": 1,
+      "color": "#688190",
+      "radius": 1.0,
       "strokeWidth": 0.75
     }
   ],
@@ -123,7 +123,7 @@
   ],
   "imprint": "https://www.aoe.com/en/imprint.html",
   "labels": {
-    "title": "Technology Radar",
+    "title": "BCA Technology Radar",
     "imprint": "Legal Information",
     "quadrant": "Quadrant",
     "quadrantOverview": "Quadrant Overview",
@@ -132,7 +132,8 @@
     "footer": "The technology radar is a project by AOE GmbH. Feel free to build your own radar based on the open source project.",
     "notUpdated": "This item was not updated in last three versions of the Radar. Should it have appeared in one of the more recent editions, there is a good chance it remains pertinent. However, if the item dates back further, its relevance may have diminished and our current evaluation could vary. Regrettably, our capacity to consistently revisit items from past Radar editions is limited.",
     "notFound": "404 - Page not found",
-    "pageAbout": "How to use AOE Technology Radar?",
+    "pageAbout": "How to use TeRa?",
+    "radar": "Radar",
     "pageOverview": "Technologies Overview",
     "pageSearch": "Search",
     "searchPlaceholder": "What are you looking for?",

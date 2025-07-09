@@ -10,7 +10,6 @@ import React, {
 import styles from "./Radar.module.css";
 
 import { Chart } from "@/components/Radar/Chart";
-import { Label } from "@/components/Radar/Label";
 import { Legend } from "@/components/Radar/Legend";
 import { Item, Quadrant, Ring } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -92,11 +91,6 @@ export const Radar: FC<RadarProps> = ({
         rings={rings}
         items={items}
       />
-      <div className={styles.labels}>
-        {quadrants.map((quadrant) => (
-          <Label key={quadrant.id} quadrant={quadrant} />
-        ))}
-      </div>
       <Legend />
       <span
         className={cn(styles.tooltip, tooltip.show && styles.isShown)}

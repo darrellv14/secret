@@ -35,6 +35,9 @@
     color: var(--foreground);
     border: 1px solid var(--foreground);
     background: transparent;
+    transition:
+      background 0.2s,
+      color 0.2s;
   }
 
   &:not(.colored) {
@@ -43,8 +46,14 @@
     background: transparent;
 
     &.selected {
-      color: var(--background);
-      background: var(--foreground);
+      color: #fff;
+      background: var(--highlight);
+      border: 1px solid var(--highlight);
+    }
+    &:hover {
+      color: #fff;
+      background: var(--highlight);
+      border: 1px solid var(--highlight);
     }
   }
 }

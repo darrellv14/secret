@@ -43,9 +43,12 @@
 
   &:hover,
   &.isActive {
-    background: var(--foreground);
-    color: var(--background);
+    background: #1976d2;
+    color: #fff;
     opacity: 1;
+    transition:
+      background 0.2s,
+      color 0.2s;
   }
 }
 
